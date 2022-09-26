@@ -170,9 +170,10 @@ public class JAVAexamples {
 			String sql = "insert into placering values (?,?,?)";
 			PreparedStatement prestmt = minConnection.prepareStatement(sql);
 			prestmt.clearParameters();
-			prestmt.setInt(1,Integer.parseInt(aarstalstr));
+			prestmt.setString(1,"2021");
 			prestmt.setString(2,initstr);
 			prestmt.setInt(3,Integer.parseInt(placstr));
+			prestmt.setNull(3, 0);
 
 			// Udf�rer s�tningen
 			prestmt.execute();
